@@ -1,0 +1,279 @@
+﻿
+@{
+    ViewBag.Title = "doctors";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="margin-top: 12px;margin-left: 130px;">doctors</h2>
+<div class="col-xl-6" style="margin-left: 100px;">
+    <div class="card spur-card" style="width:1000px;">
+        <div class="card-header">
+            <div class="spur-card-icon">
+                <i class="fas fa-bell"></i>
+            </div>
+            <div class="spur-card-title"> Doctors </div>
+            <div style="background-color: ;width:650px; height:10px"></div>
+            <button type="button" data-toggle="modal" data-target="#myModal4" style="right:100px" class="btn btn-info">Add Doctor</button>
+
+        </div>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+
+
+                    <th scope="col">name</th>
+                    <th scope="col">role</th>
+                    <th scope="col">description</th>
+                    <th scope="col">timeOfWork</th>
+
+
+
+
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in ViewBag.doctorss)
+                {
+                    <tr>
+
+
+                        <td>@item.name</td>
+                        <td>@item.role</td>
+                        <td>@item.description</td>
+                        <td>@item.timeOfWork</td>
+
+
+                        <td>@Html.ActionLink("delete", "delete", "Admin", new { id = item.ID, n = "D" }, new { @class = "btn btn-info" }) |</td>
+                        <td><button type="button" onclick="myFunction('@item.ID','@item.name','@item.role','@item.specialization','@item.Image','@item.timeOfWork','@item.experience','@item.description','@item.saterday','@item.sunday','@item.tuesday','@item.wednesday','@item.thruday','@item.frayday')" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">update</button></td>
+
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            </div>
+            @using (Html.BeginForm("doctorData", "Admin", FormMethod.Post))
+            {
+                <div style="width:450px">
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">ID</label>
+                        <div class="col-sm-10" style="width:350px">
+                            <input type="text" class="form-control" name="ID" id="ID" value="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+                        <div class="col-sm-10" style="width:350px">
+                            <input type="text" class="form-control" name="name" id="name" value="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">role</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="role" id="role" value="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Specialization</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="specialization" id="specialization" value="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">Image</label>
+                        <div class="col-sm-10">
+                            <input type="file" class="form-control" id="image" name="Image" value="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">TimeOfWork</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="timeOfWork" id="timeOfWork" value="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">Expereience</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="experience" id="experience" value="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">description</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="description" id="description" value="">
+                        </div>
+                    </div>
+                    <center>
+                        <div style="width:350px">
+
+                            <input type="checkbox" id="c1" name="saterday" value=true> saterday
+                            <input type="checkbox" id="c2" name="sunday" value=true> sunday
+                            <input type="checkbox" id="c3" name="monday" value=true> monday<br>
+                            <input type="checkbox" id="c4" name="tuesday" value=true> tuesday
+                            <input type="checkbox" id="c5" name="wednesday" value=true> wednesday
+                            <input type="checkbox" id="c6" name="thruday" value=true> thruday
+
+                        </div>
+                    </center>
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary">OK</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>
+<div class="modal fade" id="myModal4" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            </div>
+            @using (Html.BeginForm("AddDoctors", "Admin", FormMethod.Post))
+            {
+                <div style="width:450px">
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">ID</label>
+                        <div class="col-sm-10" style="width:350px">
+                            <input type="text" class="form-control" name="ID" id="ID" value="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+                        <div class="col-sm-10" style="width:350px">
+                            <input type="text" class="form-control" name="name" id="name" value="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">role</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="role" id="role" value="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Specialization</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="specialization" id="specializtion" value="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">Image</label>
+                        <div class="col-sm-10">
+                            <input type="file" class="form-control" id="image" name="Image" value="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">TimeOfWork</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="timeOfWork" id="timeOfWork" value="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">Expereience</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="experience" id="experience" value="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">description</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="description" id="description" value="">
+                        </div>
+                    </div>
+                    <center>
+                        <div style="width:350px">
+
+                            <input type="checkbox" id="c1" name="saterday" value=true> saterday
+                            <input type="checkbox" id="c2" name="sunday" value=true> sunday
+                            <input type="checkbox" id="c3" name="monday" value=true> monday<br>
+                            <input type="checkbox" id="c4" name="tuesday" value=true> tuesday
+                            <input type="checkbox" id="c5" name="wednesday" value=true> wednesday
+                            <input type="checkbox" id="c6" name="thruday" value=true> thruday
+
+                        </div>
+                    </center>
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary">OK</button>
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+            }
+        </div>
+
+    </div>
+</div>
+
+
+
+<script>
+        function myFunction(ID,name, role, specialization,Image, timeOfWork, experience, description, saterday, sunday, tuesday, wednesday, thruday, frayday) {
+            $("#ID").val(ID);
+            $("#name").val(name);
+            $("#role").val(role);
+            $("#specialization").val(specialization);
+
+            $("#timeOfWork").val(timeOfWork);
+            $("#experience").val(experience);
+            $("#description").val(description);
+            $("#Image").val(Image);
+
+
+            if (saterday == "True") { document.getElementById("c1").checked = true; }
+            if (sunday == "True") { document.getElementById("c2").checked = true; }
+            if (tuesday == "True") { document.getElementById("c3").checked = true; }
+            if (wednesday == "True") { document.getElementById("c4").checked = true; }
+            if (thruday == "True") { document.getElementById("c5").checked = true; }
+            if (frayday == "True") { document.getElementById("c6").checked = true; }
+
+        }
+
+        function myfunc2(ID, Name, Email, adderess, telphone, fax,discription, Image) {
+            $("#IDD").val(ID);
+            $("#Name").val(Name);
+            $("#Email").val(Email);
+            $("#adderess").val(adderess);
+            $("#fax").val(fax);
+
+            $("#telphone").val(telphone);
+            $("#discription").val(discription);
+            $("#Image").val(Image);
+
+        }
+
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="~/Content/js/spur.js"></script>
+
+
+
+

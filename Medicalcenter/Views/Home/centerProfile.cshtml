@@ -1,0 +1,587 @@
+﻿
+@model Medicalcenter.Models.MedicalCenter
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="~/Content/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/css/owl.carousel.css">
+    <link href="https://fonts.googleapis.com/css?family=Changa" rel="stylesheet">
+    <!--Default Theme-->
+    <link rel="stylesheet" href="~/Content/css/owl.theme.css">
+    <link rel="shortcut icon" type="image/png" href="">
+    <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/css/bootstrap-rtl.css">
+    <link rel="stylesheet" href="~/Content/css/style.css">
+</head>
+
+<body>
+    <!-- header -->
+    <a id="scroll-top" href="#top"><button>Top</button></a>
+    <header>
+        <div class="container">
+            <div class="header-bg">
+                <div class="logo">
+                    <img src="~/Content/images/logo.png" alt="logo">
+                </div>
+                <span class="fa fa-bars hidden-lg hidden-md open-nav"></span>
+                <div class="nav-contant">
+                    <nav class="clearfix">
+                        <div class="nav-bar clearfix">
+                            <span class="close-btn ex hidden-lg hidden-md">X</span>
+                            <ul class="clearfix">
+
+                                <li>
+                                    <a class="close-btn scroll-downn" href="/Home/home">الرئيسية</a>
+                                </li>
+                                <li>
+                                    <a class="close-btn scroll-downn" href="/Home/getCenters" ">المراكز الطبية </a>
+                                </li>
+                                <li>
+                                    <a class="close-btn scroll-downn" href="/Home/home#xxx">عن الموقع</a>
+                                </li>
+                                <li>
+                                    <a class="close-btn scroll-downn" href="/Home/home#bbb">تواصل معانا</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- end header -->
+    <!-- bar -->
+    <div class="intro intro-small" data-stellar-background-ratio="0" style="background-image: url(&quot;images/temp/intro2.jpg&quot;); background-position: 0px 0px;">
+        <div class="container">
+            <div class="row">
+                <div class="intro-caption">
+                    <h5>مركز</h5>
+
+                    <h2>الشفاء الطبي</h2>
+                </div>
+                <!-- /.row -->
+            </div>
+        </div>
+    </div>
+    <!-- end bar -->
+    <!-- contain -->
+    <section class="contain  ">
+        <div class="container">
+            <div class="row panel">
+                <div class="col-md-5 col-xs-12 p-0" style="padding-right:0">
+                    <img src="~/Content/images/@Model.Image" alt="" class="img-responsive about-centers">
+                </div>
+                <div class="col-md-7 col-xs-12">
+                    <div class="about-center ">
+                        <p>
+@Model.discription                        </p>
+                        <ul class="center-info">
+                            <li>
+                                <span>العنوان : </span> @Model.adderess
+                            </li>
+                            <li>
+                                <span>التلفون :</span> @Model.telphone
+                            </li>
+                            <li>
+                                <span>الفاكس :</span> @Model.fax
+                            </li>
+                            <li>
+                                <span>البريد الألكتروني :</span> @Model.Email
+                            </li>
+                        </ul>
+                        <div class="socials ">
+                            <ul class="">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--end contain -->
+    <!-- tabs -->
+    <section class="tabs">
+        <ul class="nav nav-tabs">
+            <li class="active">
+                
+                <a data-toggle="tab" href="#one">
+                    <span class="icon">
+                        <i class="icon-eye-sign"></i>
+                    </span>
+                    عيون
+                </a>
+            </li>
+            <li>
+                <a data-toggle="tab" href="#two">
+                    <span class="icon">
+                        <i class="icon-ear"></i>
+                    </span>
+                    انف و أذن
+                </a>
+            </li>
+            <li>
+                <a data-toggle="tab" href="#three">
+                    <span class="icon">
+                        <i class="icon-brain"></i>
+                    </span>
+                    مخ واعصاب
+                </a>
+            </li>
+            <li>
+                <a data-toggle="tab" href="#four">
+                    <span class="icon">
+                        <i class="icon-tooth"></i>
+                    </span>
+                    أسنان
+                </a>
+            </li>
+            <li>
+                <a data-toggle="tab" href="#five">
+                    <span class="icon">
+                        <i class="icon-heart-attack"></i>
+                    </span>
+                    باطنة
+                </a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="one" class="tab-pane fade in active">
+                <div class="container">
+                    <div class="row">
+                        @foreach (var item in ViewBag.doctors)
+                        {
+                            if (item.specialization == "A") { 
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="doctor">
+                                    <h5 class="doctor-name">@item.name</h5>
+                                    <!-- /.doctor-name -->
+
+                                    <div class="doctor-box">
+                                        <div class="doctor-image">
+                                            <a href="dr_profile.html">
+                                                <img src="~/Content/images/@item.Image" style="width:250px ; height:200px"  >
+                                            </a>
+                                        </div>
+
+
+                                        <div class="doctor-body">
+                                            <h6>@item.role</h6>
+
+                                            <div class="socials">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">
+                                                            <i class="fa fa-facebook"></i>
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="#">
+                                                            <i class="fa fa-twitter"></i>
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="#">
+                                                            <i class="fa fa-google-plus"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- /.socials -->
+
+                                            <p>@item.description</p>
+                                            <i class="fa fa-plus"></i>
+                                            @Html.ActionLink("معلومات اكتر", "getdocprofile", new { ID = item.ID })
+
+                                            
+                                        </div>
+                                        <!-- /.doctor-body -->
+                                    </div>
+                                    <!-- /.doctor-box -->
+                                </div>
+                            </div>
+                            }
+
+                        }
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="two" class="tab-pane fade">
+                <div class="container">
+                    <div class="row">
+                        @foreach (var item in ViewBag.doctors)
+                        {
+                            if (item.specialization == "N")
+                            {
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <div class="doctor">
+                                        <h5 class="doctor-name">@item.name</h5>
+                                        <!-- /.doctor-name -->
+
+                                        <div class="doctor-box">
+                                            <div class="doctor-image">
+                                                <a href="dr_profile.html">
+                                                    <img src="~/Content/images/@item.Image" style="width:250px ; height:200px ;"  >
+                                                </a>
+                                            </div>
+
+
+                                            <div class="doctor-body">
+                                                <h6>@item.role</h6>
+
+                                                <div class="socials">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#">
+                                                                <i class="fa fa-facebook"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li>
+                                                            <a href="#">
+                                                                <i class="fa fa-twitter"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li>
+                                                            <a href="#">
+                                                                <i class="fa fa-google-plus"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <!-- /.socials -->
+
+                                                <p>@item.description</p>
+                                                <i class="fa fa-plus"></i>
+                                                @Html.ActionLink("معلومات اكتر", "getdocprofile", new { ID = item.ID })
+
+                                                
+                                            </div>
+                                            <!-- /.doctor-body -->
+                                        </div>
+                                        <!-- /.doctor-box -->
+                                    </div>
+                                </div>
+                            }
+
+                        }
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="three" class="tab-pane fade">
+                <div class="container">
+                    <div class="row">
+                       @foreach (var item in ViewBag.doctors)
+                       {
+                           if (item.specialization == "G")
+                           {
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="doctor">
+                                    <h5 class="doctor-name">@item.name</h5>
+                                    <!-- /.doctor-name -->
+
+                                    <div class="doctor-box">
+                                        <div class="doctor-image">
+                                            <a href="dr_profile.html">
+                                                <img src="~/Content/images/@item.Image" style="width:250px ; height:200px"  >
+                                            </a>
+                                        </div>
+
+
+                                        <div class="doctor-body">
+                                            <h6>@item.role</h6>
+
+                                            <div class="socials">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">
+                                                            <i class="fa fa-facebook"></i>
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="#">
+                                                            <i class="fa fa-twitter"></i>
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="#">
+                                                            <i class="fa fa-google-plus"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- /.socials -->
+
+                                            <p>@item.description</p>
+                                            <i class="fa fa-plus"></i>
+                                            @Html.ActionLink("معلومات اكتر", "getdocprofile", new { ID = item.ID })
+
+                                            
+                                        </div>
+                                        <!-- /.doctor-body -->
+                                    </div>
+                                    <!-- /.doctor-box -->
+                                </div>
+                            </div>
+                           }
+
+                       }
+                    </div>
+                </div>
+            </div>
+            <div id="four" class="tab-pane fade">
+                <div class="container">
+                    <div class="row">
+                       @foreach (var item in ViewBag.doctors)
+                       {
+                           if (item.specialization == "T")
+                           {
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="doctor">
+                                    <h5 class="doctor-name">@item.name</h5>
+                                    <!-- /.doctor-name -->
+
+                                    <div class="doctor-box">
+                                        <div class="doctor-image">
+                                            <a href="dr_profile.html">
+                                                <img src="~/Content/images/@item.Image" style="width:250px ; height:200px"  >
+                                            </a>
+                                        </div>
+
+
+                                        <div class="doctor-body">
+                                            <h6>@item.role</h6>
+
+                                            <div class="socials">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">
+                                                            <i class="fa fa-facebook"></i>
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="#">
+                                                            <i class="fa fa-twitter"></i>
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="#">
+                                                            <i class="fa fa-google-plus"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- /.socials -->
+
+                                            <p>@item.description</p>
+                                            <i class="fa fa-plus"></i>
+                                            @Html.ActionLink("معلومات اكتر", "getdocprofile", new { ID = item.ID })
+
+                                            
+                                        </div>
+                                        <!-- /.doctor-body -->
+                                    </div>
+                                    <!-- /.doctor-box -->
+                                </div>
+                            </div>
+                           }
+
+                       }
+                    </div>
+                </div>
+            </div>
+            <div id="five" class="tab-pane fade">
+                <div class="container">
+                    <div class="row">
+                        @foreach (var item in ViewBag.doctors)
+                        {
+                            if (item.specialization == "B")
+                            {
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <div class="doctor">
+                                        <h5 class="doctor-name">@item.name</h5>
+                                        <!-- /.doctor-name -->
+
+                                        <div class="doctor-box">
+                                            <div class="doctor-image">
+                                                <a href="dr_profile.html">
+                                                    <img src="~/Content/images/@item.Image"style="width:250px ; height:200px" >
+                                                </a>
+                                            </div>
+
+
+                                            <div class="doctor-body">
+                                                <h6>@item.role</h6>
+
+                                                <div class="socials">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#">
+                                                                <i class="fa fa-facebook"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li>
+                                                            <a href="#">
+                                                                <i class="fa fa-twitter"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li>
+                                                            <a href="#">
+                                                                <i class="fa fa-google-plus"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <!-- /.socials -->
+
+                                                <p>@item.description</p>
+                                                <i class="fa fa-plus"></i>
+                                                @Html.ActionLink("معلومات اكتر", "getdocprofile", new { ID = item.ID })
+                                                
+                                            </div>
+                                            <!-- /.doctor-body -->
+                                        </div>
+                                        <!-- /.doctor-box -->
+                                    </div>
+                                </div>
+                            }
+
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end tabs -->
+    <!-- map  -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d13676.636528013747!2d31.3941833!3d31.021815750000002!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2seg!4v1552563986919"
+            width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <!-- end map -->
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-xs-12">
+                    <div class="links">
+                        <h4>
+                            <i class="fa fa-link"></i>
+                            روابط نصية
+                        </h4>
+                        <ul>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <div class="footer-form">
+                        <h4>
+                            <i class="fa fa-envelope"></i>
+                            النشرة البريدية
+                        </h4>
+                        <p>اشترك بالنشره البريديه ليصلك جديد زفين </p>
+                        <form action="">
+                            <div class="form-group">
+                                <input type="text" placeholder="ادخل بريدك الالكترونى هنا">
+                            </div>
+                            <button class="btn btn-danger">اشتراك</button>
+                        </form>
+
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <div class="footer-logo">
+                        <img class="img-responsive" src="~/Content/images/404-icon.png" alt="logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="bottom-footer clearfix">
+        <div class="col-xs-12">
+            <div class="left">
+                <p>تصميم وتطوير </p>
+            </div>
+            <div class="right">
+                <p>جميع الحقوق محفوظه لدي موقع طبي لسنة 2019</p>
+            </div>
+        </div>
+    </div>
+    <!-- end footer -->
+    <script src="~/Content/js/jquery-3.1.0.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/owl.carousel.js"></script>
+    <script src="~/Content/js/plugin.js"></script>
+    <script src="~/Content/js/jquery.mixitup.js"></script>
+</body>
+
+</html>

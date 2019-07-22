@@ -1,0 +1,101 @@
+﻿@model IEnumerable<Medicalcenter.Models.doctor>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>c</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.role)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.experience)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.saterday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sunday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tuesday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.wednesday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.thruday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.frayday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.timeOfWork)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.role)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.experience)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.saterday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sunday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tuesday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.wednesday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.thruday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.frayday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.timeOfWork)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

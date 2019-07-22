@@ -1,0 +1,130 @@
+﻿@model Medicalcenter.Models.doctor
+
+@{
+    Layout = null;
+}
+@ViewBag.Itemmsg
+<!DOCTYPE html>
+@Model.ID
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>doctorData</title>
+</head>
+<body>
+    <div>
+        <h4>doctor</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.specialization)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.specialization)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.role)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.role)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.experience)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.experience)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.description)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.description)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.saterday)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.saterday)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.sunday)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.sunday)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.tuesday)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.tuesday)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.wednesday)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.wednesday)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.thruday)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.thruday)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.frayday)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.frayday)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.timeOfWork)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.timeOfWork)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Image)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Image)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

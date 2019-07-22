@@ -1,0 +1,350 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600|Open+Sans:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/css/spur.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+    <script src="~/Content/js/chart-js-config.js"></script>
+    <title>Spur - A Bootstrap Admin Template</title>
+</head>
+<body>
+
+    <div class="dash">
+        <div class="dash-nav dash-nav-dark">
+            <header>
+                <a href="#!" class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </a>
+                <a href="index.html" class="spur-logo"><i class="fas fa-bolt"></i> <span>Medical Centers </span></a>
+            </header>
+            <nav class="dash-nav-list">
+                <br />
+
+
+                <div style="right:100px ; margin-bottom:20px ;margin-left: 70px;">
+                    <i class="fas fa-home"></i>
+                    @Html.ActionLink("الصفحة الرئيسية", "home", "Home")
+                </div>
+                <div style="right:100px;margin-bottom:20px;margin-left: 70px;">
+                    <i class="far fa-chart-bar"></i>
+                    @Html.ActionLink("احصائيات", "statistics", "Admin")
+                </div>
+                <div style="right:100px;margin-bottom:20px;margin-left: 70px;">
+                    <i class="fas fa-child"></i>
+                    @Html.ActionLink("المتابعين", "getscribers", "Admin")
+                </div>
+                <div style="right:100px;margin-bottom:20px;margin-left: 70px;">
+                    <i class="far fa-comments"></i>
+                    @Html.ActionLink("جهات الاتصال", "contactUs", "Admin")
+                </div>
+                <div style="right:100px;margin-bottom:20px;margin-left: 70px;">
+                    <i class="fas fa-plus-circle"></i>
+                    @Html.ActionLink("المراكز الطبية", "medicalCenters", "Admin")
+                </div>
+                <div style="right:100px;margin-bottom:20px;margin-left: 70px;">
+                    <i class="fas fa-user-md"></i>
+                    @Html.ActionLink("الدكاترة", "doctors", "Admin")
+                </div>
+
+
+
+
+
+            </nav>
+        </div>
+        @*<div class="dash-app">
+            <header class="dash-toolbar">
+
+
+                <form class="searchbox" action="#!"></form>
+                <div class="tools">
+
+
+                </div>
+            </header>
+            <main class="dash-content">
+                <div class="container-fluid">
+                    <div class="row dash-row">
+                        <div class="col-xl-4">
+                            <div class="stats stats-primary">
+                                <h3 class="stats-title"> subscribers </h3>
+                                <div class="stats-content">
+                                    <div class="stats-icon">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="stats-data">
+                                        <div class="stats-number">@ViewBag.subscribe</div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4">
+                            <div class="stats stats-success ">
+                                <h3 class="stats-title"> medical centers </h3>
+                                <div class="stats-content">
+                                    <div class="stats-icon">
+                                        <i class="fa fa-medkit"></i>
+                                    </div>
+                                    <div class="stats-data">
+                                        <div class="stats-number">@ViewBag.medical</div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4">
+                            <div class="stats stats-danger">
+                                <h3 class="stats-title"> num of doctors </h3>
+                                <div class="stats-content">
+                                    <div class="stats-icon">
+                                        <i class="fa fa-user-md"></i>
+                                    </div>
+                                    <div class="stats-data">
+                                        <div class="stats-number">@ViewBag.doctors</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="display:block">
+
+                        <div class="col-xl-6">
+                            <div class="card spur-card" style="width:1000px">
+                                <div class="card-header">
+                                    <div class="spur-card-icon">
+                                        <i class="fas fa-bell"></i>
+                                    </div>
+                                    <div class="spur-card-title"> Subscribers </div>
+                                </div>
+
+                                <table class="table table-hover" style="width:1000px">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Email</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in ViewBag.SubscribersList)
+                                        {
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>@item.ID</td>
+                                                <td>@item.Email</td>
+                                                <td>@Html.ActionLink("delete", "delete", "Admin", new { id = item.ID, n = "S" }, new { @class = "btn btn-info" }) |</td>
+
+                                            </tr>
+                                        }
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="card spur-card" style="width:1000px">
+                                <div class="card-header">
+                                    <div class="spur-card-icon">
+                                        <i class="fas fa-bell"></i>
+                                    </div>
+                                    <div class="spur-card-title"> Contact Us </div>
+                                </div>
+
+                                <table class="table table-hover" style="width:1000px">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Subject</th>
+                                            <th scope="col">Inquiry</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in ViewBag.ContactUsUsers)
+                                        {
+                                            <tr>
+
+                                                <td>@item.ID</td>
+                                                <td>@item.Email</td>
+                                                <td>@item.subject</td>
+                                                <td>@item.inquiry</td>
+                                                <td>@Html.ActionLink("delete", "delete", "Admin", new { id = item.ID, n = "C" }, new { @class = "btn btn-info" }) |</td>
+
+                                            </tr>
+                                        }
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-6">
+                            <div class="card spur-card" style="width:1000px">
+                                <div class="card-header">
+                                    <div class="spur-card-icon">
+                                        <i class="fas fa-bell"></i>
+                                    </div>
+                                    <div class="spur-card-title"> Medical Centers </div>
+                                    <div style="background-color: ;width:650px; height:10px"></div>
+                                    <button type="button" data-toggle="modal" data-target="#myModal3" style="right:100px" class="btn btn-info">ADD Center</button>
+
+                                </div>
+
+                                <table class="table table-hover" style="width:1000px">
+                                    <thead>
+                                        <tr>
+
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Email</th>
+
+                                            <th scope="col">Address</th>
+                                            <th scope="col">telphone</th>
+                                            <th scope="col">description</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        @foreach (var item in ViewBag.medicalCenters)
+                                        {
+                                            <tr>
+
+                                                <td>@item.ID</td>
+                                                <td>@item.Name</td>
+                                                <td>@item.Email</td>
+                                                <td>@item.adderess</td>
+                                                <td>@item.telphone</td>
+                                                <td>@item.discription</td>
+                                                <td>@Html.ActionLink("delete", "delete", "Admin", new { id = item.ID, n = "M" }, new { @class = "btn btn-info" }) |</td>
+                                                <td><button type="button" onclick="myfunc2('@item.ID','@item.Name','@item.Email','@item.adderess','@item.telphone','@item.fax','@item.discription','@item.Image')" class="btn btn-secondary" data-toggle="modal" data-target="#myModal2">update</button></td>
+
+                                            </tr>
+                                        }
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="card spur-card" style="width:1000px">
+                                <div class="card-header">
+                                    <div class="spur-card-icon">
+                                        <i class="fas fa-bell"></i>
+                                    </div>
+                                    <div class="spur-card-title"> Doctors </div>
+                                    <div style="background-color: ;width:650px; height:10px"></div>
+                                    <button type="button" data-toggle="modal" data-target="#myModal4" style="right:100px" class="btn btn-info">ADD Center</button>
+
+                                </div>
+
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+
+
+                                            <th scope="col">name</th>
+                                            <th scope="col">role</th>
+                                            <th scope="col">description</th>
+                                            <th scope="col">timeOfWork</th>
+
+
+
+
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in ViewBag.doctorss)
+                                        {
+                                            <tr>
+
+
+                                                <td>@item.name</td>
+                                                <td>@item.role</td>
+                                                <td>@item.description</td>
+                                                <td>@item.timeOfWork</td>
+
+
+                                                <td>@Html.ActionLink("delete", "delete", "Admin", new { id = item.ID, n = "D" }, new { @class = "btn btn-info" }) |</td>
+                                                <td><button type="button" onclick="myFunction('@item.ID','@item.name','@item.role','@item.specialization','@item.Image','@item.timeOfWork','@item.experience','@item.description','@item.saterday','@item.sunday','@item.tuesday','@item.wednesday','@item.thruday','@item.frayday')" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">update</button></td>
+
+                                            </tr>
+                                        }
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>*@
+        <body>
+            ...
+            <div class="container body-content" >
+                @RenderBody()
+                
+
+            </div>
+
+            ...
+            @RenderSection("scripts", required: false)
+        </body>
+    </div>
+    <div>
+        
+    </div>
+
+    @**@
+    <script>
+        function myFunction(ID,name, role, specialization,Image, timeOfWork, experience, description, saterday, sunday, tuesday, wednesday, thruday, frayday) {
+            $("#ID").val(ID);
+            $("#name").val(name);
+            $("#role").val(role);
+            $("#specialization").val(specialization);
+
+            $("#timeOfWork").val(timeOfWork);
+            $("#experience").val(experience);
+            $("#description").val(description);
+            $("#Image").val(Image);
+
+
+            if (saterday == "True") { document.getElementById("c1").checked = true; }
+            if (sunday == "True") { document.getElementById("c2").checked = true; }
+            if (tuesday == "True") { document.getElementById("c3").checked = true; }
+            if (wednesday == "True") { document.getElementById("c4").checked = true; }
+            if (thruday == "True") { document.getElementById("c5").checked = true; }
+            if (frayday == "True") { document.getElementById("c6").checked = true; }
+
+        }
+
+        function myfunc2(ID, Name, Email, adderess, telphone, fax,discription, Image) {
+            $("#IDD").val(ID);
+            $("#Name").val(Name);
+            $("#Email").val(Email);
+            $("#adderess").val(adderess);
+            $("#fax").val(fax);
+
+            $("#telphone").val(telphone);
+            $("#discription").val(discription);
+            $("#Image").val(Image);
+
+        }
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="~/Content/js/spur.js"></script>
+</body>
+</html>

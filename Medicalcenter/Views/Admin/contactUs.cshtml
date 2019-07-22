@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "contactUs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="margin-top: 12px;margin-left: 130px;">contactUs</h2>
+<div class="col-xl-6" style="margin-left: 100px;">
+    <div class="card spur-card" style="width:1000px">
+        <div class="card-header">
+            <div class="spur-card-icon">
+                <i class="fas fa-bell"></i>
+            </div>
+            <div class="spur-card-title"> Contact Us </div>
+        </div>
+
+        <table class="table table-hover" style="width:1000px">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Inquiry</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in ViewBag.ContactUsUsers)
+                {
+                    <tr>
+
+                        <td>@item.ID</td>
+                        <td>@item.Email</td>
+                        <td>@item.subject</td>
+                        <td>@item.inquiry</td>
+                        <td>@Html.ActionLink("delete", "delete", "Admin", new { id = item.ID, n = "C" }, new { @class = "btn btn-info" }) |</td>
+
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+

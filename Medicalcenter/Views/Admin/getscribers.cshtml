@@ -1,0 +1,184 @@
+﻿
+@{
+    ViewBag.Title = "getscribers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="display:block ;">
+
+    <div class="col-xl-6">
+        <div class="card spur-card" style="width:1100px;top: 100px;left: 150px;">
+            <div class="card-header">
+                <div class="spur-card-icon">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <div class="spur-card-title"> Subscribers </div>
+            </div>
+
+            <table class="table table-hover" style="width:1100px">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Email</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in ViewBag.SubscribersList)
+                    {
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>@item.ID</td>
+                            <td>@item.Email</td>
+                            <td>@Html.ActionLink("delete", "delete", "Admin", new { id = item.ID, n = "S" }, new { @class = "btn btn-info" }) |</td>
+
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    @*<div class="col-xl-6">
+        <div class="card spur-card" style="width:1000px">
+            <div class="card-header">
+                <div class="spur-card-icon">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <div class="spur-card-title"> Contact Us </div>
+            </div>
+
+            <table class="table table-hover" style="width:1000px">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Subject</th>
+                        <th scope="col">Inquiry</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in ViewBag.ContactUsUsers)
+                    {
+                        <tr>
+
+                            <td>@item.ID</td>
+                            <td>@item.Email</td>
+                            <td>@item.subject</td>
+                            <td>@item.inquiry</td>
+                            <td>@Html.ActionLink("delete", "delete", "Admin", new { id = item.ID, n = "C" }, new { @class = "btn btn-info" }) |</td>
+
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="col-xl-6">
+        <div class="card spur-card" style="width:1000px">
+            <div class="card-header">
+                <div class="spur-card-icon">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <div class="spur-card-title"> Medical Centers </div>
+                <div style="background-color: ;width:650px; height:10px"></div>
+                <button type="button" data-toggle="modal" data-target="#myModal3" style="right:100px" class="btn btn-info">ADD Center</button>
+
+            </div>
+
+            <table class="table table-hover" style="width:1000px">
+                <thead>
+                    <tr>
+
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+
+                        <th scope="col">Address</th>
+                        <th scope="col">telphone</th>
+                        <th scope="col">description</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in ViewBag.medicalCenters)
+                    {
+                        <tr>
+
+                            <td>@item.ID</td>
+                            <td>@item.Name</td>
+                            <td>@item.Email</td>
+                            <td>@item.adderess</td>
+                            <td>@item.telphone</td>
+                            <td>@item.discription</td>
+                            <td>@Html.ActionLink("delete", "delete", "Admin", new { id = item.ID, n = "M" }, new { @class = "btn btn-info" }) |</td>
+                            <td><button type="button" onclick="myfunc2('@item.ID','@item.Name','@item.Email','@item.adderess','@item.telphone','@item.fax','@item.discription','@item.Image')" class="btn btn-secondary" data-toggle="modal" data-target="#myModal2">update</button></td>
+
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-xl-6">
+        <div class="card spur-card" style="width:1000px">
+            <div class="card-header">
+                <div class="spur-card-icon">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <div class="spur-card-title"> Doctors </div>
+                <div style="background-color: ;width:650px; height:10px"></div>
+                <button type="button" data-toggle="modal" data-target="#myModal4" style="right:100px" class="btn btn-info">ADD Center</button>
+
+            </div>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+
+
+                        <th scope="col">name</th>
+                        <th scope="col">role</th>
+                        <th scope="col">description</th>
+                        <th scope="col">timeOfWork</th>
+
+
+
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in ViewBag.doctorss)
+                    {
+                        <tr>
+
+
+                            <td>@item.name</td>
+                            <td>@item.role</td>
+                            <td>@item.description</td>
+                            <td>@item.timeOfWork</td>
+
+
+                            <td>@Html.ActionLink("delete", "delete", "Admin", new { id = item.ID, n = "D" }, new { @class = "btn btn-info" }) |</td>
+                            <td><button type="button" onclick="myFunction('@item.ID','@item.name','@item.role','@item.specialization','@item.Image','@item.timeOfWork','@item.experience','@item.description','@item.saterday','@item.sunday','@item.tuesday','@item.wednesday','@item.thruday','@item.frayday')" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">update</button></td>
+
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>*@
+</div>
+
+
+

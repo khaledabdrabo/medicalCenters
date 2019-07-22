@@ -1,0 +1,344 @@
+﻿@model Medicalcenter.Models.doctor
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="~/Content/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/css/owl.carousel.css">
+    <link href="https://fonts.googleapis.com/css?family=Changa" rel="stylesheet">
+    <!--Default Theme-->
+    <link rel="stylesheet" href="~/Content/css/owl.theme.css">
+    <link rel="shortcut icon" type="image/png" href="">
+    <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/css/bootstrap-rtl.css">
+    <link rel="stylesheet" href="~/Content/css/style.css">
+</head>
+
+<body>
+    <!-- header -->
+    <a id="scroll-top" href="#top"><button>Top</button></a>
+    <header>
+        <div class="container">
+            <div class="header-bg">
+                <div class="logo">
+                    <img src="~/Content/images/logo.png" alt="logo">
+                </div>
+                <span class="fa fa-bars hidden-lg hidden-md open-nav"></span>
+                <div class="nav-contant">
+                    <nav class="clearfix">
+                        <div class="nav-bar clearfix">
+                            <span class="close-btn ex hidden-lg hidden-md">X</span>
+                            <ul class="clearfix">
+                                <li>
+                                    <a class="close-btn scroll-downn" href="/Home/home">الرئيسية</a>
+                                </li>
+                                <li>
+                                    <a class="close-btn scroll-downn" href="/Home/getCenters ">المراكز الطبية </a>
+                                </li>
+                                <li>
+                                    <a class="close-btn scroll-downn" href="/Home/home#xxx">عن الموقع</a>
+                                </li>
+                                <li>
+                                    <a class="close-btn scroll-downn" href="/Home/home#bbb">تواصل معانا</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- end header -->
+    <!-- bar -->
+    
+
+    
+    <div class="intro intro-small" data-stellar-background-ratio="0" style="background-image: url(&quot;images/temp/intro2.jpg&quot;); background-position: 0px 0px;">
+        <div class="container">
+            <div class="row">
+                <div class="intro-caption">
+                    <h5>الدكتور </h5>
+
+                    <h2>@Model.name</h2>
+                </div>
+                <!-- /.row -->
+            </div>
+        </div>
+    </div>
+    <!-- end bar -->
+    <!-- centers -->
+    <section class="dr-profile">
+        <article class="event article-single-event">
+
+            <div class="event-boxs">
+                <div class="event-body" itemprop="articleBody">
+                    <div class="doctor-profile">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4 col-xs-12">
+                                    <img src="~/Content/images/@Model.Image" alt="Doctor" class="img-responsive">
+                                </div>
+
+                                <div class="col-md-8 col-xs-12">
+                                    <div class="bg-txt">
+                                        <p>
+                                            @Model.description
+                                        </p>
+
+                                        
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dr-info">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <h3 class="txt-color">خبرة العمل</h3>
+
+                                    <h4>@Model.experience سنوات</h4>
+
+                                    
+                                    <hr>
+                                    <h4>الدرجه العلميه @Model.role</h4>
+                                    
+                                    <hr>
+                                    
+                                    
+                                    <blockquote>
+                                        استشاري الجراحة العامة والجهاز الهضمى والمناظير والسمنة وعضو كلية الجراحين الملكية لندن .جراحة عامة متخصص في جراحة عامة بالغين،
+                                        جراحة اورام الثدي، جراحة بطن، جراحة غدد صماء، جراحة جهاز هضمي ومناظير بالغين، ومناظير
+                                        اطفال، جراحة اصابات وحوادث، جراحة أورام بالغين، جراحة اورام القولون، جراحة اورام
+                                        المعدة، جراحة عامة اطفال، جراحة سمنة وتخسيس.
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <div class="row panel">
+                                <div class="col-xs-12">
+                                    <div class="doctor-program">
+                                        <h4>أوقات العمل</h4>
+                                        <ul class="small-block-grid-1 medium-block-grid-1 large-block-grid-2">
+                                            @if (Model.saterday==true) {
+                                            <li>
+                                                <span>@Model.timeOfWork</span>
+                                                السبت
+                                            </li>
+                                            }
+                                            @if (Model.sunday == true)
+                                            {
+                                                <li>
+                                                    <span>@Model.timeOfWork</span>
+                                                    الاحد
+                                                </li>
+                                            }
+                                            @if (Model.tuesday == true)
+                                            {
+                                                <li>
+                                                    <span>@Model.timeOfWork</span>
+                                                     الثلاثاء
+                                                </li>
+                                            }
+                                            @if (Model.wednesday == true)
+                                            {
+                                                <li>
+                                                    <span>@Model.timeOfWork</span>
+                                                    الاربع
+                                                </li>
+                                            }
+                                            @if (Model.thruday == true)
+                                            {
+                                                <li>
+                                                    <span>@Model.timeOfWork</span>
+                                                    الخميس
+                                                </li>
+                                            }
+                                            
+                                            @if (Model.frayday == true)
+                                            {
+                                                <li>
+                                                    <span>@Model.timeOfWork</span>
+                                                    الجمعة
+                                                </li>
+                                            }
+                                            
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="widget widget-form">
+                                    <h4>سهل وسريع</h4>
+                                    <h3>أحجز موعدك للكشف</h3>
+                                    <div class="from-appointment">
+@using (Html.BeginForm("Booking", "Home", FormMethod.Post))
+{ 
+                                       
+                                            <div class="form-row">
+                                                <div class="form-controls">
+                                                    <input type="text" class="field" required="" name="name" id="field-fname2" value="" placeholder="الأسم بالكامل" aria-required="true">
+                                                </div>
+                                                <!-- /.form-controls -->
+                                            </div>
+                                            <!-- /.form-row -->
+
+                                            <div class="form-row">
+                                                <div class="form-controls">
+                                                    <input type="email" class="field" required="" name="email" id="field-email2" value="" placeholder="بريدك الألكتروني"
+                                                           aria-required="true">
+                                                </div>
+                                                <!-- /.form-controls -->
+                                            </div>
+                                            <!-- /.form-row -->
+
+                                            <div class="form-row">
+                                                <div class="form-controls">
+                                                    <input type="tel" class="field" required="" name="tephone" id="field-phone" value="" placeholder="رقم التلفون" aria-required="true">
+                                                </div>
+                                                <!-- /.form-controls -->
+                                            </div>
+                                            <!-- /.form-row -->
+
+                                            <div class="form-row">
+                                                <div class="form-controls form-controls-data-field">
+                                                    <input type="text" class="field field-date" required="" name="date" id="field-date" value="" placeholder="احجز تاريخ"
+                                                           aria-required="true">
+                                                </div>
+                                                <!-- /.form-controls -->
+                                            </div>
+                                            <!-- /.form-row -->
+
+                                            <div class="form-row">
+                                                <div class="form-controls">
+                                                    <textarea class="textarea" required="" name="message" id="field-message" placeholder="الرسالة" aria-required="true"></textarea>
+                                                </div>
+                                                <!-- /.form-controls -->
+                                            </div>
+                                            <!-- /.form-row -->
+
+                                            <div class="form-actions">
+                                                <input type="submit" value="أحجز موعد" class="button btn-white btn-small">
+                                            </div>
+                                            <!-- /.form-actions -->
+                                        
+}
+                                    </div>
+                                    <!-- /.from-appointment -->
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /.doctor-body -->
+            </div>
+            <!-- /.event-box -->
+        </article>
+    </section>
+    }
+    <!--end centers -->
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-xs-12">
+                    <div class="links">
+                        <h4>
+                            <i class="fa fa-link"></i>
+                            روابط نصية
+                        </h4>
+                        <ul>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <div class="footer-form">
+                        <h4>
+                            <i class="fa fa-envelope"></i>
+                            النشرة البريدية
+                        </h4>
+                        <p>اشترك بالنشره البريديه ليصلك جديد زفين </p>
+                        @using (Html.BeginForm("subscribe", "Home", FormMethod.Post))
+                        {
+                            <form action="">
+                                <div class="form-group">
+                                    <input type="text" name="Email" placeholder="ادخل بريدك الالكترونى هنا">
+                                </div>
+                                <button type="submit" class="btn btn-danger">اشتراك</button>
+                            </form>
+                        }
+
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <div class="footer-logo">
+                        <img class="img-responsive" src="~/Content/images/404-icon.png" alt="logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="bottom-footer clearfix">
+        <div class="col-xs-12">
+            <div class="left">
+                <p>تصميم وتطوير </p>
+            </div>
+            <div class="right">
+                <p>جميع الحقوق محفوظه لدي موقع طبي لسنة 2019</p>
+            </div>
+        </div>
+    </div>
+    <!-- end footer -->
+    <script src="~/Content/js/jquery-3.1.0.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/owl.carousel.js"></script>
+    <script src="~/Content/js/foundation-datepicker.js"></script>
+    <script src="~/Content/js/plugin.js"></script>
+</body>
+
+</html>

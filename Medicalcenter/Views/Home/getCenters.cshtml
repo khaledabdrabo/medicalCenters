@@ -1,0 +1,229 @@
+﻿@model IEnumerable<Medicalcenter.Models.MedicalCenter>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="~/Content/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/css/owl.carousel.css">
+    <link href="https://fonts.googleapis.com/css?family=Changa" rel="stylesheet">
+    <!--Default Theme-->
+    <link rel="stylesheet" href="~/Content/css/owl.theme.css">
+    <link rel="shortcut icon" type="image/png" href="">
+    <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/css/bootstrap-rtl.css">
+    <link rel="stylesheet" href="~/Content/css/style.css">
+</head>
+
+<body>
+    <!-- header -->
+    <a id="scroll-top" href="#top"><button>Top</button></a>
+    <header>
+        <div class="container">
+            <div class="header-bg">
+                <div class="logo">
+                    <img src="~/Content/images/logo.png" alt="logo">
+                </div>
+                <span class="fa fa-bars hidden-lg hidden-md open-nav"></span>
+                <div class="nav-contant">
+                    <nav class="clearfix">
+                        <div class="nav-bar clearfix">
+                            <span class="close-btn ex hidden-lg hidden-md">X</span>
+                            <ul class="clearfix">
+                                <li>
+                                    <a class="close-btn scroll-downn" href="/Home/home">الرئيسية</a>
+                                </li>
+                                <li>
+                                    <a class="close-btn scroll-downn" href="/Home/getCenters"">المراكز الطبية </a>
+                                </li>
+                                <li>
+                                    <a class="close-btn scroll-downn" href="/Home/home#xxx">عن الموقع</a>
+                                </li>
+                                <li>
+                                    <a class="close-btn scroll-downn" href="/Home/home#bbb">تواصل معانا</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- end header -->
+    <!-- bar -->
+    <div class="intro intro-small" data-stellar-background-ratio="0" style="background-image: url(&quot;images/temp/intro2.jpg&quot;); background-position: 0px 0px;">
+        <div class="container">
+            <div class="row">
+                <div class="intro-caption">
+                    <h5>شـــاهد </h5>
+
+                    <h2>المراكز الطبية</h2>
+                </div>
+                <!-- /.row -->
+            </div>
+        </div>
+    </div>
+    <!-- end bar -->
+    <!-- centers -->
+    <section class="centers">
+        <div class="container">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="service">
+                            <div class="service-box">
+                                <div class="service-image">
+                                    <a href="#">
+                                        <img src="~/Content/images/@item.Image" item-prop="image" alt="">
+                                    </a>
+                                </div>
+                                <!-- /.service-image -->
+
+                                <div class="service-body">
+                                    <h4>
+                                        @item.Name</h4>
+
+                                        <p>
+                                            @item.discription 
+                                        </p>
+                                    <i class="fa fa-plus"></i>
+                                    @Html.ActionLink("معلومات اكتر", "centerProfile", new {id=item.ID })
+                                        
+                                </div>
+                            <!-- /.service-body -->
+                            </div>
+                        <!-- /.service-box -->
+                        </div>
+                    </div>
+
+                }
+                
+                
+               
+            </div>
+        </div>
+        <div class="numbers">
+            <div class="container">
+                <div class="row">
+                    <div class="paging">
+                        <ul>
+                            <li class="current">
+                                <a href="#">1</a>
+                            </li>
+
+                            <li>
+                                <a href="#">2</a>
+                            </li>
+
+                            <li>
+                                <a href="#">3</a>
+                            </li>
+
+                            <li>
+                                <a href="#">4</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.paging -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--end centers -->
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-xs-12">
+                    <div class="links">
+                        <h4>
+                            <i class="fa fa-link"></i>
+                            روابط نصية
+                        </h4>
+                        <ul>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <div class="footer-form">
+                        <h4>
+                            <i class="fa fa-envelope"></i>
+                            النشرة البريدية
+                        </h4>
+                        <p>اشترك بالنشره البريديه ليصلك جديد زفين </p>
+                        <form action="">
+                            <div class="form-group">
+                                <input type="text" placeholder="ادخل بريدك الالكترونى هنا">
+                            </div>
+                            <button class="btn btn-danger">اشتراك</button>
+                        </form>
+
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <div class="footer-logo">
+                        <img class="img-responsive" src="~/Content/images/404-icon.png" alt="logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="bottom-footer clearfix">
+        <div class="col-xs-12">
+            <div class="left">
+                <p>تصميم وتطوير </p>
+            </div>
+            <div class="right">
+                <p>جميع الحقوق محفوظه لدي موقع طبي لسنة 2019</p>
+            </div>
+        </div>
+    </div>
+    <!-- end footer -->
+    <script src="~/Content/js/jquery-3.1.0.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/owl.carousel.js"></script>
+    <script src="~/Content/js/plugin.js"></script>
+    <script src="~/Content/js/jquery.mixitup.js"></script>
+</body>
+
+</html>

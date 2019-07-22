@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "statistics";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="margin-top: 12px;margin-left: 130px;">statistics</h2>
+<div class="row dash-row" style="margin-left: 100px;">
+    <div class="col-xl-4"style="width:450px">
+        <div class="stats stats-primary">
+            <h3 class="stats-title"> subscribers </h3>
+            <div class="stats-content">
+                <div class="stats-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="stats-data">
+                    <div class="stats-number">@ViewBag.subscribe</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-4">
+        <div class="stats stats-success ">
+            <h3 class="stats-title"> medical centers </h3>
+            <div class="stats-content">
+                <div class="stats-icon">
+                    <i class="fa fa-medkit"></i>
+                </div>
+                <div class="stats-data">
+                    <div class="stats-number">@ViewBag.medical</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-4">
+        <div class="stats stats-danger">
+            <h3 class="stats-title"> num of doctors </h3>
+            <div class="stats-content">
+                <div class="stats-icon">
+                    <i class="fa fa-user-md"></i>
+                </div>
+                <div class="stats-data">
+                    <div class="stats-number">@ViewBag.doctors</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,308 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="~/Content/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/css/owl.carousel.css">
+    <link href="https://fonts.googleapis.com/css?family=Changa" rel="stylesheet">
+    <!--Default Theme-->
+    <link rel="stylesheet" href="~/Content/css/owl.theme.css">
+    <link rel="shortcut icon" type="image/png" href="">
+    <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/css/bootstrap-rtl.css">
+    <link rel="stylesheet" href="~/Content/css/style.css">
+</head>
+
+<body>
+    <!-- header -->
+    <a id="scroll-top" href="#top"><button>Top</button></a>
+    <header>
+        <div class="container">
+            <div class="header-bg" style="width:auto">
+                <div class="logo">
+                    <img src="~/Content/images/logo.png" alt="logo">
+                </div>
+                <span class="fa fa-bars hidden-lg hidden-md open-nav"></span>
+                <div class="nav-contant">
+                    <nav class="clearfix">
+                        <div class="nav-bar clearfix">
+                            <span class="close-btn ex hidden-lg hidden-md">X</span>
+                            <ul class="clearfix" style="width:1000px ; background-color: ;margin-top: -61px;margin-right: 341px;" >
+                                <li >
+                                    <a class="close-btn scroll-downn" href="/Account/Login">تسجيل دخول</a>
+                                </li>
+                                <li>
+                                    <a class="close-btn scroll-downn" href="/Home/home">الرئيسية</a>
+                                </li>
+                                <li>
+                                    <a class="close-btn scroll-downn" href="/Home/getCenters">المراكز الطبية </a>
+                                </li>
+                                <li>
+                                    <a class="close-btn scroll-downn" href="#xxx">عن الموقع</a>
+                                </li>
+                                <li>
+                                    <a class="close-btn scroll-downn" href="#bbb">تواصل معانا</a>
+                                </li>
+                                
+                                <li>
+                                    <a class="close-btn scroll-downn" href="/Account/Login">تسجيل الدخول</a>
+                                </li>
+                                
+                                
+                               
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--end header -->
+    <!-- slder -->
+    <div id="owl-demo" class="owl-carousel owl-theme">
+        <div class="item">
+            <img src="~/Content/images/sliders.jpg" alt="slider">
+            <div class="slider">
+                <div class="caption">
+
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/Content/images/slider-2.jpg" alt="slider">
+            <div class="slider">
+                <div class="caption">
+
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/Content/images/sliders.jpg" alt="slider">
+            <div class="slider">
+                <div class="caption">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end slider -->
+    <!-- search -->
+    <section class="search">
+        <div class="container">
+            <div class="row">
+                <h1 align="center">البحث عن المركز</h1>
+            </div>
+            <div class="row">
+               
+@using (Html.BeginForm("search", "Home", FormMethod.Post))
+{
+               
+                    <div class="col-xs-12">
+                        <input type="text" name="name" class="form-control search-input" placeholder="كلمة البحث">
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="btn-form">
+                            <button type="submit" class="btn btn-dafult">ابحث الان</button>
+                        </div>
+
+                    </div>
+                
+}
+            </div>
+        </div>
+    </section>
+    <!-- end search -->
+    <!-- service -->
+    <section class="about" id="xxx">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-xs-16">
+                    <div class="img-bg">
+                        <img class="img-responsive" src="~/Content/images/bg-about.jpg" alt="about">
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-16">
+                    <div class="section-features">
+                        <h4>عن الموقع</h4>
+                        <h2>خدماتنا</h2>
+                        <p>
+                            نقدم من خلال موقعنا معلومات عن افضل المراكزالطبية الموجودة تقوم فقط بالبحث عن المركز الطبي الذي تريد
+                            ذيارته
+                        </p>
+                        <ul class="list-features" itemscope="" itemtype="http://schema.org/Product">
+                            <li>
+                                <p itemprop="name">
+                                    <i class="fa fa-plus"></i>
+                                    سرعة البحث
+                                </p>
+                            </li>
+
+                            <li>
+                                <p itemprop="name">
+                                    <i class="fa fa-plus"></i>
+                                    اعداد كبيرة من المراكز الطبية
+                                </p>
+                            </li>
+
+                            <li>
+                                <p itemprop="name">
+                                    <i class="fa fa-plus"></i>
+                                    ترشيح لافضل المركز
+                                </p>
+                            </li>
+                            <li>
+                                <p itemprop="name">
+                                    <i class="fa fa-plus"></i>
+                                    سرعة البحث
+                                </p>
+                            </li>
+
+                            <li>
+                                <p itemprop="name">
+                                    <i class="fa fa-plus"></i>
+                                    اعداد كبيرة من المراكز الطبية
+                                </p>
+                            </li>
+                        </ul>
+                        <!-- /.list-features -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end service -->
+    <!-- contact -->
+    <section class="contact" id="bbb">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2 align="center">تواصل معانا</h2>
+                    
+                </div>
+                <div class="col-xs-12">
+                    
+                        
+                    @using (Html.BeginForm("ContactUS", "Home", FormMethod.Post))
+                    {
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">أكتب بريدك الألكترونى</label>
+                            <input type="email" name="Email" class="form-control" >
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">أسم الموضوع</label>
+                            <input type="text"  name="subject" class="form-control" >
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">أكتب استفسارك</label>
+                            <textarea class="form-control" name="inquiry"  cols="30" rows="10"></textarea>
+                        </div>
+                        <div class="submit-btn">
+                            <button type="submit" class="form-control">ارسال</button>
+                        </div>
+                    }
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end contact -->
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-xs-12">
+                    <div class="links">
+                        <h4>
+                            <i class="fa fa-link"></i>
+                            روابط نصية
+                        </h4>
+                        <ul>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                            <li>
+                                <a href="">رابط نصى</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <div class="footer-form">
+                        <h4>
+                            <i class="fa fa-envelope"></i>
+                            النشرة البريدية
+                        </h4>
+                        <p>اشترك بالنشره البريديه ليصلك جديد زفين </p>
+                       @using (Html.BeginForm("subscribe", "Home", FormMethod.Post))
+                        {
+                        <form action="">
+                            <div class="form-group">
+                                <input type="text" name="Email" placeholder="ادخل بريدك الالكترونى هنا">
+                            </div>
+                            <button type="submit" class="btn btn-danger">اشتراك</button>
+                        </form>
+                        }
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <div class="footer-logo">
+                        <img class="img-responsive" src="~/Content/images/404-icon.png" alt="logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="bottom-footer clearfix">
+        <div class="col-xs-12">
+            <div class="left">
+                <p>تصميم وتطوير </p>
+            </div>
+            <div class="right">
+                <p>جميع الحقوق محفوظه لدي موقع طبي لسنة 2019</p>
+            </div>
+        </div>
+    </div>
+    <!-- end footer -->
+    <script src="~/Content/js/jquery-3.1.0.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/owl.carousel.js"></script>
+    <script src="~/Content/js/plugin.js"></script>
+    <script src="~/Content/js/jquery.mixitup.js"></script>
+</body>
+
+</html>
